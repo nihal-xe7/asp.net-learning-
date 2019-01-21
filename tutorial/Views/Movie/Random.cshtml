@@ -1,0 +1,26 @@
+﻿@using tutorial.Models
+@model tutorial.viewModels.RandomMovieById
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var tColor = Model.Customers.Count > 1 ? "Red" : "White";
+}
+<h2 style="color: @tColor">@Model.Movies.Name</h2>
+
+@if (Model.Customers.Count > 1)
+{
+    <ui>
+        @foreach (var custom in Model.Customers)
+        {
+        <li>@custom.Name</li>
+        }
+
+    </ui>
+}
+else
+{
+    <h3>No Customer found.</h3>
+}
+
